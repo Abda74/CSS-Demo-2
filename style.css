@@ -1,0 +1,74 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #888888;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main span{
+    font-size: 22rem;
+    font-weight: bolder;
+    font-family: monospace;
+    position: relative;
+    perspective: 550px;
+}
+
+.anim-letter span::before ,
+.anim-letter span::after{
+    position: absolute;
+    content: attr(data-letter);
+    transform-origin: left;
+    inset: 0;
+}
+
+.anim-letter span::before{
+    color: rgba(0,0,0, .27);
+    transition: transform 0.4s ease-out;
+}
+
+.anim-letter span::after{
+    color: white;
+    transition: transform 0.4s ease-out , color 0.4s ease-out;
+    transform: rotateY(-30deg);
+}
+
+.anim-letter:hover span::after{
+    transform: rotateY(-40deg);
+}
+
+.anim-letter:nth-child(1):hover span::after{
+    color: blue;
+}
+
+.anim-letter:nth-child(2):hover span::after{
+    color: red;
+}
+
+.anim-letter:nth-child(3):hover span::after{
+    color: #ffef3d;
+}
+
+.anim-letter:nth-child(4):hover span::after{
+    color: green;
+}
+
+.anim-letter:nth-child(5):hover span::after{
+    color: #5fbfff;
+}
+
+.anim-letter:nth-child(6):hover span::after{
+    color: #36367c;
+}
